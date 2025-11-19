@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CitaController;
 use Illuminate\Support\Facades\Route;
 
 //Vista de login
@@ -27,3 +28,19 @@ Route::put('/usuarios/{id}/desactivar', [UsuarioController::class, 'desactivar']
 //Cambiar password usuario
 Route::get('/usuarios/{id}/password', [UsuarioController::class, 'passwordForm'])->name('usuarios.password');
 Route::put('/usuarios/{id}/password', [UsuarioController::class, 'passwordUpdate'])->name('usuarios.password.update');
+
+//Vista de citas
+Route::get('/citas', [CitaController::class, 'index'])->name('citas.index');
+
+//Vista Crear Cita
+Route::get('/citas/create', [CitaController::class, 'create'])->name('citas.create');
+Route::post('/citas', [CitaController::class, 'store'])->name('citas.store');
+
+//Vista Editar Cita
+Route::get('/citas/{id}/edit', [CitaController::class, 'edit'])->name('citas.edit');
+Route::put('/citas/{id}', [CitaController::class, 'update'])->name('citas.update');
+
+//Vista Eliminar Cita
+Route::delete('/citas/{id}', [CitaController::class, 'destroy'])->name('citas.destroy');
+
+

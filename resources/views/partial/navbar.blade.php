@@ -40,7 +40,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('citas*') ? 'active' : '' }}"
-                        href="#">
+                        href="{{route('citas.index')}}">
                         <i class="bi bi-calendar2-check-fill"></i> Citas
                     </a>
                 </li>
