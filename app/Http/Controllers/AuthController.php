@@ -13,12 +13,6 @@ class AuthController extends Controller
         return view('modules.login.index', compact('titulo_pagina'));
     }
 
-    public function usuarios(){
-        $titulo_pagina = 'Listado de usuarios';
-        $usuarios = User::all();
-        return view('modules.usuarios.index',compact('titulo_pagina','usuarios'));
-    }
-
     public function validarLogin(Request $request)
     {
         $credenciales = $request->validate([

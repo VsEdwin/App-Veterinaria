@@ -1,8 +1,9 @@
 @unless (request()->routeIs('login'))
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container-fluid">
 
-        <a class="navbar-brand fw-bold" href="{{ route('home') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <i class="bi bi-house-heart-fill"></i> Veterinaria
         </a>
 
@@ -16,7 +17,6 @@
 
             <ul class="navbar-nav ms-auto">
 
-                {{-- Home --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
                         href="{{ route('home') }}">
@@ -24,7 +24,6 @@
                     </a>
                 </li>
 
-                {{-- Usuarios --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('usuarios.index') ? 'active' : '' }}"
                         href="{{ route('usuarios.index') }}">
@@ -32,7 +31,6 @@
                     </a>
                 </li>
 
-                {{-- Clientes --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('clientes*') ? 'active' : '' }}"
                         href="#">
@@ -40,7 +38,6 @@
                     </a>
                 </li>
 
-                {{-- Citas --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('citas*') ? 'active' : '' }}"
                         href="#">
@@ -48,7 +45,6 @@
                     </a>
                 </li>
 
-                {{-- Vacunas --}}
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('vacunas*') ? 'active' : '' }}"
                         href="#">

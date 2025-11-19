@@ -12,7 +12,7 @@
                 <th>Nombre</th>
                 <th>Correo</th>
                 <th>Editar</th>
-                <th>Activat/Desactivar</th>
+                <th>Activar/Desactivar</th>
                 <th>Actualizar Password</th>
             </tr>
         </thead>
@@ -24,25 +24,29 @@
                 <td>{{ $usuario->email }}</td>
 
                 <td>
-                    <a href="#" class="btn btn-warning btn-sm">
+                    <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning btn-sm">
                         Editar
                     </a>
                 </td>
 
                 <td>
                     @if($usuario->activo)
-                        <a href="#" class="btn btn-danger btn-sm">
-                            Desactivar
-                        </a>
+                        <form action="{{ route('usuarios.desactivar', $usuario->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-danger btn-sm">Desactivar</button>
+                        </form>
                     @else
-                        <a href="#" class="btn btn-success btn-sm">
-                            Activar
-                        </a>
+                        <form action="{{ route('usuarios.activar', $usuario->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button class="btn btn-success btn-sm">Activar</button>
+                        </form>
                     @endif
                 </td>
 
                 <td>
-                    <a href="#" class="btn btn-primary btn-sm">
+                    <a href="{{ route('usuarios.password', $usuario->id) }}" class="btn btn-primary btn-sm">
                         Actualizar Password
                     </a>
                 </td>
