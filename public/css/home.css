@@ -1,0 +1,17 @@
+.home-container {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.home-banner {
+    width: 60%;
+    max-width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
